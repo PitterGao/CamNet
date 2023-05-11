@@ -1,0 +1,22 @@
+Arenaceous 0
+Bioclastics 1
+Breccia 2
+Coarse crystal dolomite 3
+Coarse crystal limestone 4
+Evaporite 5
+Finely crystalline dolomite 6
+Finely crystalline limestone 7
+Foam 8
+Fracture 9
+Grape 10
+Micritic dolomite 11
+Micritic limestone 12
+Mid crystalline dolomite 13
+Mid crystalline limestone 14
+Oconlite 15
+Oolitic 16
+Siliceous 17
+Stromatolite 18
+Stylolite 19
+Thrombotolite 20
+Vug 21

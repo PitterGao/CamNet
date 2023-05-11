@@ -8,12 +8,13 @@ Our main tasks so far are to train a classification model, use this model to ext
 
 ## The effect and comparison of generating heatmaps are shown below
 
- <div style="display: flex;margin: auto;" loc="center">
-       <img src="./doc/img/img1.jpg" width="400rm"> 
-       <img src="./doc/img/heat1.jpg" width="400rm"> 
-   </div> 
+**The following shows the original image to CAM heatmap to the GLCM enhanced CAM heatmap**
 
-
+<div style="display: flex; align-items: flex-start;">
+	<img src="./doc/img/img1.png" width="250rm"> 
+	<img src="./doc/img/hot1.png" width="250rm"> 
+	<img src="./doc/img/heat1.png" width="250rm"> 
+</div> 
 
 
 

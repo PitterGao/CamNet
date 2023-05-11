@@ -19,11 +19,9 @@ Our main tasks so far are to train a classification model, use this model to ext
 
 **Here are some more examples**
 
-![imgExample](.\doc\img\imgExample.png)
+<div align=center><img src=".\doc\img\imgExample.png" width="1000px" loc="center"/></div>
 
-
-
-![heatExample](F:\Project\src\GeoCAM\doc\img\heatExample.png)
+<div align=center><img src=".\doc\img\heatExample.png" width="1000px" loc="center"/></div>
 
 
 

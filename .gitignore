@@ -1,2 +1,8 @@
 .idea
 .idea/*
+__pycache__
+__pycache__/*
+*.avi
+*.mp4
+model
+model/*

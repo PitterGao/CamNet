@@ -10,21 +10,32 @@ import torch
 from pytorch_grad_cam import XGradCAM
 from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 from pytorch_grad_cam.utils.image import show_cam_on_image, preprocess_image
+#
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#
+# model = torch.load('model/resnet101.pth').eval().cuda()
+# targetLayer = [model.layer4[-1]]
+#
+# outputs = None
+#
+# def output_hook(model, input, output):
+#     global outputs
+#     outputs = output
+#
+# model.fc.register_forward_hook(output_hook)
+#
+# cam = XGradCAM(model=model, target_layers=targetLayer, use_cuda=True)
+# def XGradCAM(input_tensor, cls=None):
+#     targets = [ClassifierOutputTarget(cls)]
+#
+#     if cls is None:
+#         grayscale_cam = cam(input_tensor=input_tensor, aug_smooth=True)
+#     else:
+#         grayscale_cam = cam(input_tensor=input_tensor, targets=targets, aug_smooth=True)
+#     grayscale_cam = grayscale_cam[0, :]
+#
+#     return grayscale_cam
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-model = torch.load('model/resnet101.pth').eval().cuda()
-targetLayer = [model.layer4[-1]]
-
-outputs = None
-
-def output_hook(model, input, output):
-    global outputs
-    outputs = output
-
-model.fc.register_forward_hook(output_hook)
-
-cam = XGradCAM(model=model, target_layers=targetLayer, use_cuda=True)
 
 def closest_power_of_two(n):
     """返回数n最近的2的幂"""
@@ -101,16 +112,6 @@ def heatMap(input_tensor, rgb_img, frame, cls=22, en_glcm=False):
     visualization = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
     return visualization
 
-def XGradCAM(input_tensor, cls=None):
-    targets = [ClassifierOutputTarget(cls)]
-
-    if cls is None:
-        grayscale_cam = cam(input_tensor=input_tensor, aug_smooth=True)
-    else:
-        grayscale_cam = cam(input_tensor=input_tensor, targets=targets, aug_smooth=True)
-    grayscale_cam = grayscale_cam[0, :]
-
-    return grayscale_cam
 
 def Process(frame, ShowSize, cls=None, glcm_on=True,heat=True):
     nframe = np.float32(frame) / 255
